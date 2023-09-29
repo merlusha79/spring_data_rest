@@ -1,0 +1,28 @@
+In order to start just add dependancies
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+Then you can use following api
+localhost:8080/players
+
+Customization
+* change the path of the API using the basePath property.
+*  how many items to display per page using the defaultPageSize and maxPageSize properties
+* he returnBodyOnCreate and returnBodyOnUpdate properties can be used to change the response after a POST and PUT request
+* Repositories are exposed in the REST API by using the detectionStrategy property.
+
+Sorting:
+api/players?sort=nationality,name
+
+Paging
+api/players?page=0%size=2
+
+Resource name
+@RepositoryRestResource(path="athletes")
